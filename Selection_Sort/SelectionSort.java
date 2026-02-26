@@ -16,7 +16,7 @@ public class SelectionSort {
     }
 
     public static void main(String args[]){
-        int[] arr = {64, 25, 12, 22, 11};
+        int[] arr = {64, 25, 12, 22, 13};
         System.out.println("Unsorted array: ");
         for(int i : arr){
             System.out.print(i + " ");
