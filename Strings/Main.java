@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 class Main{
     //----------Function for reverse a String------------
@@ -90,6 +92,16 @@ class Main{
         return result.toString();
     }
     
+     // Function to return all substrings of a string
+    public static List<String> getAllSubstrings(String str) {
+        List<String> result = new ArrayList<>();
+        for (int start = 0; start < str.length(); start++) {
+            for (int end = start + 1; end <= str.length(); end++) {
+                result.add(str.substring(start, end));
+            }
+        }
+        return result;
+    }
     public static void main(String args[]){
         String str = "Hello";
         String str1 = "listen";
@@ -103,6 +115,7 @@ class Main{
         Boolean result_anaCheck = check_anagram(str1,str2);
         String result_remDup = remove_duplicates(str);
         String result_strComp = string_compressor(str3);
+        List<String> result_substrings = getAllSubstrings(str);
 
         //---------Output-------------
         System.out.println(result_revStr);
@@ -111,5 +124,6 @@ class Main{
         System.out.println(result_anaCheck);
         System.out.println(result_remDup);
         System.out.println(result_strComp);
+        System.out.println(result_substrings);
     }
 }
